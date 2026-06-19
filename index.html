@@ -3,368 +3,334 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Методика русского языка · правильные ответы</title>
+<title>Орыс тілін оқыту әдістемесі · Тест</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial, sans-serif;background:#f5efe6;color:#221b16;line-height:1.5}
+body{margin:0;font-family:Arial,sans-serif;background:#f5efe6;color:#221b16;line-height:1.5}
 .header{background:linear-gradient(135deg,#3a2d63,#7c5fb0);color:white;padding:34px 18px}
 .wrap{max-width:1050px;margin:0 auto}
 .badge{display:inline-block;background:rgba(255,255,255,.16);padding:7px 11px;border-radius:999px;font-size:13px;margin-bottom:10px}
-h1{margin:0;font-size:clamp(27px,5vw,46px);line-height:1.1}
+h1{margin:0;font-size:clamp(28px,5vw,46px);line-height:1.1}
 .header p{margin:12px 0 0;color:#f5edff}
 .main{padding:20px 18px 45px}
-.tools{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 18px}
-.search{flex:1;min-width:240px;padding:13px 14px;border:1px solid #ded2c5;border-radius:14px;font-size:16px;background:white}
-.count{padding:13px 14px;border-radius:14px;background:white;border:1px solid #ded2c5;font-weight:700;color:#513c79}
-.card{display:flex;gap:14px;background:#fffaf3;border:1px solid #ded2c5;border-radius:20px;padding:16px;margin:12px 0;box-shadow:0 10px 24px rgba(58,45,99,.06)}
+.topbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+button{border:0;border-radius:14px;background:#3a2d63;color:white;padding:12px 16px;font-weight:800;cursor:pointer}
+button:hover{background:#271c47}
+.result{background:white;border:1px solid #ded2c5;border-radius:16px;padding:12px 14px;font-weight:800;color:#3a2d63}
+.question{background:#fffaf3;border:1px solid #ded2c5;border-radius:20px;padding:16px;margin:14px 0;box-shadow:0 10px 24px rgba(58,45,99,.06)}
+.q-head{display:flex;gap:12px;align-items:flex-start}
 .num{width:38px;height:38px;border-radius:50%;background:#3a2d63;color:white;display:flex;align-items:center;justify-content:center;font-weight:800;flex:0 0 auto}
-.body h3{margin:0 0 9px;font-size:17px}
-.letter{display:inline-block;margin:0 0 8px;background:#ede6f7;color:#3a2d63;border:1px solid #d7c6ef;border-radius:999px;padding:6px 10px;font-weight:800}
-.answer{margin:0;font-size:16px;font-weight:700}
+.q-text{font-weight:800;font-size:17px}
+.hint{display:inline-block;margin-left:8px;background:#ede6f7;color:#3a2d63;border:1px solid #d7c6ef;border-radius:999px;padding:3px 8px;font-size:12px}
+.options{display:grid;gap:8px;margin-top:13px}
+.option{display:flex;gap:10px;align-items:flex-start;background:white;border:1px solid #e5d9ca;border-radius:14px;padding:10px;cursor:pointer}
+.option input{margin-top:4px}
+.option.correct{background:#eef8f0;border-color:#59a66d}
+.option.wrong{background:#fff0ef;border-color:#c85b5b}
+.review{display:none;margin-top:12px;border-top:1px solid #ded2c5;padding-top:10px}
+.question.checked .review{display:block}
+.review b{color:#3a2d63}
 .footer{padding:22px 18px;text-align:center;background:#2f254d;color:#fff}
-@media(max-width:640px){.card{padding:13px;gap:10px}.body h3{font-size:15px}.answer{font-size:15px}}
+@media(max-width:640px){.question{padding:13px}.q-text{font-size:15px}.option{font-size:14px}}
 </style>
 </head>
 <body>
+
 <header class="header">
   <div class="wrap">
     <div class="badge">Орыс тілін оқыту әдістемесі</div>
-    <h1>Правильные ответы по отправленным вопросам</h1>
-    <p>Только ответы: буква/буквы и правильная формулировка.</p>
+    <h1>Тренировочный тест</h1>
+    <p>Выбери один или несколько правильных ответов. После проверки появятся правильные варианты.</p>
   </div>
 </header>
 
 <main class="main">
-  <div class="wrap">
-    <div class="tools">
-      <input class="search" id="search" placeholder="Поиск по вопросу или ответу">
-      <div class="count">Всего: 34</div>
-    </div>
-
-    <section id="list">
-
-      <article class="card">
-        <div class="num">1</div>
-        <div class="body">
-          <h3>Лингвист и педагог, разграничивающий методы обучения и исследования</h3>
-          <p class="letter">A</p>
-          <p class="answer">Ф.И. Буслаев</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">2</div>
-        <div class="body">
-          <h3>Принципы, обусловленные антропоцентрическим подходом и идеей «язык есть дух народа»</h3>
-          <p class="letter">C, D, G</p>
-          <p class="answer">культурологический; социокультурный; гуманитарный</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">3</div>
-        <div class="body">
-          <h3>Развивающие цели обучения русскому языку</h3>
-          <p class="letter">B, C, D</p>
-          <p class="answer">развитие логического мышления; овладение приёмами анализа, синтеза, сравнения; овладение навыками учебного труда</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">4</div>
-        <div class="body">
-          <h3>В любой учебный предмет входят</h3>
-          <p class="letter">D, E, G</p>
-          <p class="answer">специфический учебный материал; основы соответствующих наук; умения и навыки, формируемые на основе научных знаний</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">5</div>
-        <div class="body">
-          <h3>Педагогическая категория, регулирующая речемыслительную деятельность учителя и учеников</h3>
-          <p class="letter">D</p>
-          <p class="answer">метод обучения</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">6</div>
-        <div class="body">
-          <h3>Работа со словами-паронимами выявляется с помощью</h3>
-          <p class="letter">A</p>
-          <p class="answer">заданий синтезирующего характера, предусматривающих тренировку в лексической сочетаемости слов</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">7</div>
-        <div class="body">
-          <h3>Принцип научности</h3>
-          <p class="letter">A, C, G</p>
-          <p class="answer">достоверность фактов; верное толкование сущности языковых явлений; строгий отбор научных сведений</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">8</div>
-        <div class="body">
-          <h3>Специальные принципы изучения русского языка</h3>
-          <p class="letter">A</p>
-          <p class="answer">частнометодические принципы</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">9</div>
-        <div class="body">
-          <h3>Наиболее существенные черты зрелого/хорошего чтения</h3>
-          <p class="letter">C, E, G</p>
-          <p class="answer">высокая скорость чтения; гибкость чтения; культура чтения</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">10</div>
-        <div class="body">
-          <h3>Показатель уровня развития речи через подсчёт лексем и предложений</h3>
-          <p class="letter">E</p>
-          <p class="answer">объём высказывания</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">11</div>
-        <div class="body">
-          <h3>Виды заданий, требующие создания нового текста на основе готового при формировании связной речи</h3>
-          <p class="letter">D, E, F</p>
-          <p class="answer">записать услышанный рассказ; ввести в текст цитаты; подготовить устное сообщение на основе данного текста</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">12</div>
-        <div class="body">
-          <h3>То, о чём говорится в тексте</h3>
-          <p class="letter">C</p>
-          <p class="answer">тема текста</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">13</div>
-        <div class="body">
-          <h3>Вид задания аналитико-синтетического характера по готовому тексту</h3>
-          <p class="letter">A</p>
-          <p class="answer">озаглавить текст</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">14</div>
-        <div class="body">
-          <h3>Методы проблемного обучения</h3>
-          <p class="letter">C, D, E</p>
-          <p class="answer">частично-поисковый метод; исследовательский метод; эвристическая беседа</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">15</div>
-        <div class="body">
-          <h3>Виды списывания как одного из распространённых упражнений</h3>
-          <p class="letter">D, F</p>
-          <p class="answer">осложнённое списывание; неосложнённое списывание</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">16</div>
-        <div class="body">
-          <h3>Качество хорошей речи с показателями: большой объём активного словаря, развитый грамматический строй</h3>
-          <p class="letter">F</p>
-          <p class="answer">богатство речи</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">17</div>
-        <div class="body">
-          <h3>Количество орфограмм и пунктограмм, которые должны знать учащиеся к концу обучения</h3>
-          <p class="letter">A</p>
-          <p class="answer">71 орфограмма и 28 пунктуационных правил</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">18</div>
-        <div class="body">
-          <h3>Профессиональные умения учителя-филолога: формулировать цели, продумывать структуру урока</h3>
-          <p class="letter">C</p>
-          <p class="answer">проектировочные</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">19</div>
-        <div class="body">
-          <h3>Ряд частных оценочных компетенций</h3>
-          <p class="letter">B, C, D</p>
-          <p class="answer">способность к оценке результатов обучения; способность к оценке трудности задания; способность к разработке контрольно-измерительных материалов</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">20</div>
-        <div class="body">
-          <h3>Направление, обеспечивающее методические основы речевого развития школьников</h3>
-          <p class="letter">D</p>
-          <p class="answer">теория речевой деятельности</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">21</div>
-        <div class="body">
-          <h3>Основные практические цели обучения русскому языку</h3>
-          <p class="letter">A, B, C</p>
-          <p class="answer">формирование орфографических и пунктуационных умений и навыков; развитие умения связно излагать свои мысли; формирование языкового чутья</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">22</div>
-        <div class="body">
-          <h3>Виды формулировки орфографических правил по способу перечисления условий выбора</h3>
-          <p class="letter">C, D</p>
-          <p class="answer">регулирующие; констатирующие</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">23</div>
-        <div class="body">
-          <h3>Принципы технологии программированного обучения</h3>
-          <p class="letter">C, D, E</p>
-          <p class="answer">принцип информативности; принцип обратной связи; коммуникативный принцип обучения</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">24</div>
-        <div class="body">
-          <h3>Запас слов и выражений, усваиваемый носителем языка на основе подражания речи других людей</h3>
-          <p class="letter">A</p>
-          <p class="answer">лексикон личности</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">25</div>
-        <div class="body">
-          <h3>Педагогическая технология с главной идеей «учиться вместе»</h3>
-          <p class="letter">B</p>
-          <p class="answer">технология обучения в сотрудничестве</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">26</div>
-        <div class="body">
-          <h3>Принцип отбора языкового материала с учётом возрастных особенностей и уровня развития школьников</h3>
-          <p class="letter">A</p>
-          <p class="answer">принцип доступности</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">27</div>
-        <div class="body">
-          <h3>Смысловое восприятие, требующее выражения своей точки зрения, согласия/несогласия с автором</h3>
-          <p class="letter">D</p>
-          <p class="answer">критическое восприятие</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">28</div>
-        <div class="body">
-          <h3>Речеведческие понятия, составляющие основу работы по развитию связной речи учащихся</h3>
-          <p class="letter">B, C, E</p>
-          <p class="answer">предложение и высказывание; типы, стили, жанры речи; текст и его признаки</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">29</div>
-        <div class="body">
-          <h3>Единицы текста композиционного уровня</h3>
-          <p class="letter">A, B</p>
-          <p class="answer">абзацы; части</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">30</div>
-        <div class="body">
-          <h3>Словообразовательные упражнения для установления структурно-семантических связей и способа образования слова</h3>
-          <p class="letter">A, B</p>
-          <p class="answer">определить, от какого слова и с помощью чего образовано слово; составить цепочку однокоренных слов</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">31</div>
-        <div class="body">
-          <h3>Педагогическая технология со специальными способами, программными и техническими средствами для работы с информацией</h3>
-          <p class="letter">C</p>
-          <p class="answer">информационные технологии обучения</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">32</div>
-        <div class="body">
-          <h3>Функции контроля</h3>
-          <p class="letter">A, B, E</p>
-          <p class="answer">регулирующая; воспитательная; обучающая</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">33</div>
-        <div class="body">
-          <h3>Задания, связанные с поисковой деятельностью</h3>
-          <p class="letter">A, C, D</p>
-          <p class="answer">сравнить слова с ь и ъ знаком; определить особенность употребления ь; найти слова с ъ разделительным знаком</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="num">34</div>
-        <div class="body">
-          <h3>В процессе изучения фонетики, лексики, фразеологии, морфемики, словообразования, морфологии и синтаксиса школьники должны усвоить и знать</h3>
-          <p class="letter">A, C, D</p>
-          <p class="answer">основные орфографические понятия; единицы языка, их функции и значения; разделы науки о русском языке</p>
-        </div>
-      </article>
-
-    </section>
+<div class="wrap">
+  <div class="topbar">
+    <button onclick="checkTest()">Проверить тест</button>
+    <button onclick="resetTest()">Очистить</button>
+    <div class="result" id="result">Результат: —</div>
   </div>
+
+  <section id="quiz"></section>
+</div>
 </main>
 
-<footer class="footer">© Назерке. Материалды рұқсатсыз көшіруге, сатуға, қайта таратуға болмайды.</footer>
+<footer class="footer">
+  © Назерке. Материалды рұқсатсыз көшіруге, сатуға, қайта таратуға болмайды.
+</footer>
 
 <script>
-const search = document.getElementById('search');
-const cards = Array.from(document.querySelectorAll('.card'));
+const questions = [
+  {
+    q:"Лингвист и педагог, разграничивающий методы обучения и исследования",
+    type:"one",
+    options:["Ф.И. Буслаев","Л.Н. Толстой","Л.В. Щерба","К.Д. Ушинский","А.А. Реформатский","М.В. Ломоносов"],
+    answer:[0]
+  },
+  {
+    q:"Принципы, обусловленные антропоцентрическим подходом и идеей «язык есть дух народа»",
+    type:"multi",
+    options:["лингвистический","исторический","культурологический","социокультурный","методический","дидактический","гуманитарный"],
+    answer:[2,3,6]
+  },
+  {
+    q:"Развивающие цели обучения русскому языку",
+    type:"multi",
+    options:["воспитание любви к родному языку","развитие логического мышления","овладение приёмами анализа, синтеза, сравнения","овладение навыками учебного труда","воспитание эстетического отношения к слову","усвоение языка науки, основ знаний о языке","осознанное овладение нормами языка","понимание связей языковой системы"],
+    answer:[1,2,3]
+  },
+  {
+    q:"В любой учебный предмет входят",
+    type:"multi",
+    options:["общие вопросы языкознания","культура речи, практическая стилистика","непрерывная работа по развитию речи","специфический учебный материал, пригодный для решения воспитательных задач","основы соответствующих наук","содержание обучения русскому языку","умения и навыки, формируемые на основе научных знаний"],
+    answer:[3,4,6]
+  },
+  {
+    q:"Педагогическая категория, регулирующая речемыслительную деятельность учителя и учеников, направленную на результат",
+    type:"one",
+    options:["процесс обучения","результат обучения","подход в обучении","метод обучения","технология обучения","цель обучения"],
+    answer:[3]
+  },
+  {
+    q:"Специфика работы при рассмотрении слов-паронимов выявляется с помощью",
+    type:"one",
+    options:["заданий синтезирующего характера, предусматривающих тренировку учащихся в лексической сочетаемости слов","заданий аналитико-синтетического типа, направленных на развитие произносительной культуры","наблюдения над фонемным составом значимых частей форм","наблюдения над словаразличительной и форморазличительной функциями русского ударения","рисунков, изображающих разные предметы, наименования которых созвучны","заданий аналитического типа, направленных на развитие речевого слуха учащихся"],
+    answer:[0]
+  },
+  {
+    q:"Принцип научности",
+    type:"multi",
+    options:["предполагает достоверность излагаемых фактов","устанавливает внутренние связи между языковыми явлениями","даёт верное толкование сущности языковых явлений","предполагает отбор материала с учётом возраста школьников","устанавливает связи с материалом, который будет изучаться позже","рассматривает языковые явления в целостной системе","диктует необходимость строгого отбора научных сведений","располагает материал от простого к сложному"],
+    answer:[0,2,6]
+  },
+  {
+    q:"Специальные принципы изучения русского языка",
+    type:"one",
+    options:["частнометодические принципы","лингводидактические принципы","общелингвистические принципы","общеметодические принципы","психологические принципы","лингвокультурологические принципы"],
+    answer:[0]
+  },
+  {
+    q:"Наиболее существенные черты зрелого, хорошего чтения",
+    type:"multi",
+    options:["читательская грамотность","методика чтения","высокая скорость чтения","техника чтения","гибкость чтения","чтение вслух","культура чтения"],
+    answer:[2,4,6]
+  },
+  {
+    q:"Показатель уровня развития речи, который характеризуется путём подсчёта лексем и предложений",
+    type:"one",
+    options:["объём текста","объём слов","форма звука","форма слова","объём высказывания","объём звука"],
+    answer:[4]
+  },
+  {
+    q:"Виды заданий, требующие создания нового текста на основе готового при формировании связной речи учащихся",
+    type:"multi",
+    options:["устранить недочёты в содержании и речевом оформлении высказывания","найти в тексте лишнее","озаглавить отрывок словами текста","записать услышанный рассказ","ввести в текст цитаты, подтверждающие суждения","подготовить устное сообщение на основе данного текста"],
+    answer:[3,4,5]
+  },
+  {
+    q:"То, о чём говорится в тексте: о чём в нём повествуется, что описывается, о чём рассуждает автор",
+    type:"one",
+    options:["сюжет текста","замысел текста","тема текста","композиция текста","идея текста","смысл текста"],
+    answer:[2]
+  },
+  {
+    q:"Вид задания при работе по развитию связной речи аналитико-синтетического характера по готовому тексту",
+    type:"one",
+    options:["озаглавить текст","разбор слова","запись текста","изложение текста","устное сообщение","работа с цитатами"],
+    answer:[0]
+  },
+  {
+    q:"Методы проблемного обучения",
+    type:"multi",
+    options:["слово ученика","репродуктивный метод","частично-поисковый метод","исследовательский метод","эвристическая беседа","слово учителя"],
+    answer:[2,3,4]
+  },
+  {
+    q:"Виды списывания как одного из распространённых упражнений",
+    type:"multi",
+    options:["слуховой диктант","орфографический диктант","комбинированное задание","осложнённое списывание","зрительный диктант","неосложнённое списывание","комплексное задание","письмо с обоснованием"],
+    answer:[3,5]
+  },
+  {
+    q:"Качество хорошей речи, показателями которого являются большой объём активного словаря и развитый грамматический строй",
+    type:"one",
+    options:["правильность языкового оформления","точность речи","выразительность речи","уместность языкового оформления","норма речи","богатство речи"],
+    answer:[5]
+  },
+  {
+    q:"Количество орфограмм и пунктограмм, которые должны знать учащиеся к концу обучения",
+    type:"one",
+    options:["71 орфограмма и 28 пунктуационных правил","73 орфограммы и 25 пунктуационных правил","71 орфограмма и 26 пунктуационных правил","70 орфограмм и 25 пунктуационных правил","70 орфограмм и 27 пунктуационных правил","74 орфограммы и 24 пунктуационных правил","75 орфограмм и 26 пунктуационных правил","72 орфограммы и 29 пунктуационных правил"],
+    answer:[0]
+  },
+  {
+    q:"Профессиональные умения, составляющие основу компетенции учителя-филолога: формулировать цели, продумывать структуру урока",
+    type:"one",
+    options:["коммуникативные","структурные","проектировочные","дидактические","аналитические","методические"],
+    answer:[2]
+  },
+  {
+    q:"Ряд частных оценочных компетенций",
+    type:"multi",
+    options:["способность к переработке материалов по русскому языку","способность к оценке результатов обучения","способность к оценке трудности задания","способность к разработке контрольно-измерительных материалов","способность к прогнозированию результатов обучения","способность к предвидению результатов обучения","способность к оценке обучающего потенциала текстов"],
+    answer:[1,2,3]
+  },
+  {
+    q:"Направление, обеспечивающее методические основы речевого развития школьников",
+    type:"one",
+    options:["теория литературных жанров","теория типов текста","история русского языка","теория речевой деятельности","теория специальной речи"],
+    answer:[3]
+  },
+  {
+    q:"Основные практические цели обучения русскому языку",
+    type:"multi",
+    options:["формирование орфографических и пунктуационных умений и навыков","развитие умения связно излагать свои мысли","формирование у школьников языкового чутья","воспитание детей эстетическими средствами русского языка","вооружение учащихся литературным языком"],
+    answer:[0,1,2]
+  },
+  {
+    q:"Виды формулировки орфографических правил в зависимости от способа перечисления условий выбора",
+    type:"multi",
+    options:["контролирующие","текущие","регулирующие","констатирующие","регулярные"],
+    answer:[2,3]
+  },
+  {
+    q:"Принципы, в соответствии с которыми реализуется технология программированного обучения",
+    type:"multi",
+    options:["принцип преемственности и цикличности","принцип единства формы и содержания","принцип информативности","принцип обратной связи","коммуникативный принцип обучения","дозирования учебного материала"],
+    answer:[2,3,4]
+  },
+  {
+    q:"Запас слов, выражений, который усваивает носитель языка на основе подражания речи других людей",
+    type:"one",
+    options:["лексикон личности","уровень культуры","толковый словарь","тезаурус личности","языковой пласт"],
+    answer:[0]
+  },
+  {
+    q:"Педагогическая технология, главная идея которой заключается в том, чтобы учиться вместе",
+    type:"one",
+    options:["технология компьютерного обучения","технология обучения в сотрудничестве","технология развивающего обучения","технология программированного обучения"],
+    answer:[1]
+  },
+  {
+    q:"Принцип методики русского языка, предполагающий отбор языкового материала с учётом возрастных особенностей школьников и уровня их развития",
+    type:"one",
+    options:["принцип доступности","принцип ясности","принцип точности","принцип открытости","принцип последовательности"],
+    answer:[0]
+  },
+  {
+    q:"Разновидность смыслового восприятия, требующая выражения своей точки зрения, согласия или несогласия с основной мыслью автора",
+    type:"one",
+    options:["детальное восприятие","глобальное восприятие","звуковое восприятие","критическое восприятие"],
+    answer:[3]
+  },
+  {
+    q:"Речеведческие понятия, составляющие основу работы по развитию связной речи учащихся",
+    type:"multi",
+    options:["средства выразительности речи","предложение и высказывание","типы, стили, жанры речи","риторические основы речи","текст и его признаки"],
+    answer:[1,2,4]
+  },
+  {
+    q:"Единицы текста композиционного уровня",
+    type:"multi",
+    options:["абзацы","части","слово","высказывание","микротема"],
+    answer:[0,1]
+  },
+  {
+    q:"Словообразовательные упражнения, использующиеся для развития умения устанавливать структурно-семантические связи и определять способ образования слова",
+    type:"multi",
+    options:["определите, от какого слова и с помощью чего образовано данное слово","составьте цепочку однокоренных слов в порядке их образования","подберите однокоренные слова к данному слову","заполните таблицу, используя данные примеры"],
+    answer:[0,1]
+  },
+  {
+    q:"Педагогическая технология, использующая специальные способы, программные и технические средства для работы с информацией",
+    type:"one",
+    options:["интерактивные технологии обучения","инновационные технологии обучения","информационные технологии обучения","модульные технологии обучения","машинные технологии обучения"],
+    answer:[2]
+  },
+  {
+    q:"Функции контроля",
+    type:"multi",
+    options:["регулирующая","воспитательная","систематизирующая","формирующая","обучающая"],
+    answer:[0,1,4]
+  },
+  {
+    q:"К заданиям, связанным с поисковой деятельностью, можно отнести вопросы",
+    type:"multi",
+    options:["Сравни слова с ь и ъ знаком, что общего между ними и чем они отличаются","Расскажи о правописании ь и ъ","В чём особенность употребления ь?","Найди слова с ъ разделительным знаком","Расскажи, когда пишется ь после шипящих"],
+    answer:[0,2,3]
+  },
+  {
+    q:"В процессе изучения фонетики, лексики, фразеологии, морфемики, словообразования, морфологии и синтаксиса школьники должны усвоить и знать",
+    type:"multi",
+    options:["основные орфографические понятия","написание слов с изученными видами орфограмм","единицы языка, их функции и значения","разделы науки о русском языке","правописание слов с непроверяемыми орфограммами"],
+    answer:[0,2,3]
+  }
+];
 
-search.addEventListener('input', () => {
-  const q = search.value.toLowerCase().trim();
-  cards.forEach(card => {
-    card.style.display = card.textContent.toLowerCase().includes(q) ? '' : 'none';
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const quiz = document.getElementById("quiz");
+
+function renderQuiz(){
+  quiz.innerHTML = "";
+  questions.forEach((q, index) => {
+    const article = document.createElement("article");
+    article.className = "question";
+    article.dataset.answer = q.answer.join(",");
+    article.innerHTML = `
+      <div class="q-head">
+        <div class="num">${index + 1}</div>
+        <div class="q-text">${q.q} <span class="hint">${q.type === "multi" ? "бірнеше жауап" : "бір жауап"}</span></div>
+      </div>
+      <div class="options">
+        ${q.options.map((opt, i) => `
+          <label class="option">
+            <input type="${q.type === "multi" ? "checkbox" : "radio"}" name="q${index}" value="${i}">
+            <span><b>${letters[i]})</b> ${opt}</span>
+          </label>
+        `).join("")}
+      </div>
+      <div class="review">
+        <p><b>Правильный ответ:</b> ${q.answer.map(i => letters[i]).join(", ")} — ${q.answer.map(i => q.options[i]).join("; ")}</p>
+      </div>
+    `;
+    quiz.appendChild(article);
   });
-});
+}
+
+function checkTest(){
+  let score = 0;
+  const all = Array.from(document.querySelectorAll(".question"));
+
+  all.forEach((card, idx) => {
+    const correct = questions[idx].answer.map(String).sort();
+    const selected = Array.from(card.querySelectorAll("input:checked")).map(i => i.value).sort();
+
+    const ok = correct.length === selected.length && correct.every((v,i)=>v===selected[i]);
+    if(ok) score++;
+
+    card.classList.add("checked");
+    card.querySelectorAll(".option").forEach(label => {
+      label.classList.remove("correct","wrong");
+      const input = label.querySelector("input");
+      if(correct.includes(input.value)) label.classList.add("correct");
+      if(input.checked && !correct.includes(input.value)) label.classList.add("wrong");
+    });
+  });
+
+  document.getElementById("result").textContent = `Результат: ${score} из ${questions.length}`;
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+function resetTest(){
+  document.querySelectorAll("input").forEach(i => i.checked = false);
+  document.querySelectorAll(".question").forEach(q => q.classList.remove("checked"));
+  document.querySelectorAll(".option").forEach(o => o.classList.remove("correct","wrong"));
+  document.getElementById("result").textContent = "Результат: —";
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+renderQuiz();
 </script>
 </body>
 </html>
